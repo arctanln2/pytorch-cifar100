@@ -2,3 +2,9 @@
 data
 checkpoint
 runs
+*_checkpoint.npy
+cmd.out
+cmd.pid
+hello.txt
+nohup.out
+out.txt
