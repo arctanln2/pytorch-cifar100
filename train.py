@@ -61,7 +61,7 @@ def train(epoch):
         # t_finish = time.time()
         # modify to neceesary information
         # 可能会有几个多余的任务
-        print(f"{epoch},{batch_index * args.b + len(images)},{time.time()}", flush=True)
+        print(f"{epoch},{batch_index + 1},{time.time()}", flush=True)
         # print('Training Epoch: {epoch} [{trained_samples}/{total_samples}]\tLoss: {:0.4f}\tLR: {:0.6f}\tCost time: {:0.6f}'.format(
         #     loss.item(),
         #     optimizer.param_groups[0]['lr'],
@@ -247,8 +247,8 @@ if __name__ == '__main__':
     # 修改
     # sys.stdout = open('logs/train/' + time.strftime("%Y%m%d-%H-%M-%S", time.localtime()), 'w')
     sys.stdout = open(args.logpath, 'w')
-    print("epoch,trained_sample,time", flush=True)
-    print(f"1,0,{time.time()}", flush=True)
+    print("epoch,iteration,time", flush=True)
+    print(f"0,0,{time.time()}", flush=True)
     # f = open("hello.txt", "w+")
     for epoch in range(1, settings.EPOCH + 1):
         if epoch > args.warm:
